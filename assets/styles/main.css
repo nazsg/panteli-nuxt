@@ -1,0 +1,30 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+html, body, #__nuxt, #__layout>div {
+  /* height: 100%; */
+  display: flex;
+}
+#__layout > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+.content {
+  flex: 1 0 auto;
+  background-color: rgb(240, 233, 233);
+}
+footer {
+  background-color: rgb(214, 211, 211);
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

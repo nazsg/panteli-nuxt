@@ -1,0 +1,26 @@
+{
+  "name": "panteli-nuxt",
+  "version": "1.0.0",
+  "description": "Panteli&#39;s of Canterbury",
+  "author": "Naz Sharid",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt --port 3131",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.10.1",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "materialize-css": "^1.0.0-rc.2",
+    "node-sass": "^4.13.1",
+    "nuxt": "^2.0.0",
+    "sass-loader": "^8.0.2",
+    "vue-material-design-icons": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
