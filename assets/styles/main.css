@@ -5,26 +5,41 @@
   opacity: 0;
 }
 
-html, body, #__nuxt, #__layout>div {
-  /* height: 100%; */
-  display: flex;
+*, p {
+  margin: 0;
+  padding: 0;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
-#__layout > div {
+
+html {
+  overflow: auto;
+}
+/* container has been used by _grid.styl, quicker this way than an attempt to hack it */
+.container_pant { 
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  height: 100vh;
 }
 .content {
   flex: 1 0 auto;
   background-color: rgb(240, 233, 233);
 }
-footer {
-  background-color: rgb(214, 211, 211);
-  padding: 10px;
-  flex-shrink: 0;
+header {
+  background-color: rgb(4, 14, 59);
 }
-
-* {
-  margin: 0;
-  padding: 0;
+header a {
+  color: grey;
+}
+section {
+  background-color: rgb(117, 117, 117);
+  height: 5px;
+  /* border: 1px solid rgb(241, 239, 239); */
+}
+footer {
+  background-color: rgba(42, 131, 158, 0.521);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 4px;
+  font-family: Arial, Helvetica, sans-serif;
 }

@@ -13,6 +13,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;700&display=swap' }
+
     ]
   },
   /*
@@ -41,7 +43,8 @@ export default {
     // Doc: https://bootstrap-vue.js.org/docs/
     // 'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Axios module configuration
