@@ -2,7 +2,7 @@
   <div>
     <div id="showcase">
 
-      <div class="banner">
+      <div class="covid">
         <!-- <h1>{{ 'welcome' | upper }}</h1> -->
         <template v-for="(menu, index) in this.$bus.home">
           <div v-if="menu.comments == 'home'" :key="index">
@@ -12,8 +12,20 @@
       </div>
     </div>    
     <section></section>
-    <v-parallax height="90"
+    <v-parallax height="600"
       src="https://panteli.biz/static/cup-smoke.jpg">
+      <div class="banner">
+        <p>
+          Freshly made sandwiches, teas and coffees and hot meals are served all day at reasonable prices.
+        </p>
+        <p>
+          Wines, beers, and spirits are available all day, with or without meals, throughout the premises.        
+        </p>
+        <div class="buttons">
+          <nuxt-link to="/upstairs-menu">Upstairs Menu</nuxt-link>
+          <nuxt-link to="/downstairs-menu">Downstairs Menu</nuxt-link>
+        </div>
+      </div>
     </v-parallax>      
     
     <section></section>
@@ -65,33 +77,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bg : rgba(100, 127, 250, 0.466);
-.banner {
-  background-color: $bg;
+$bg : rgba(60, 65, 90, 0.664);
+
+@mixin textBox {
+  background-color: rgba(60, 65, 90, 0.664);
   padding: 30px 20px;
   color: rgb(194, 181, 181);
   border-radius: 15px;
   width: 50%;
   font-family: Verdana; 
-  // font-size: 700; 
-  // font-weight: 500;
   letter-spacing: 2px;
-}
-
-section#opening-hours {
-  background-color: $bg;
-  background-image: url('https://images.pexels.com/photos/9352/glass-time-watch-business.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.5;
-  time {
-    letter-spacing: 2px;
-    font-family: Roboto;
-    color: white;
+  button, a {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(73, 75, 72);
+    background-color: rgb(214, 212, 212);
+    padding: 10px 20px;
+    border-radius: 7px;
+    margin-top: 20px;
+    &:hover {
+      background-color: rgb(245, 245, 250);
+    }
   }
 }
+.covid {
+  @include textBox;
+}
+.banner {
+  @include textBox;
+  background-color: rgba(11, 70, 117, 0.733);
+  margin: 0 auto;
+  color: rgb(218, 218, 218);
+  font-family: 'Marck Script', cursive;
+  font-size: 1.7rem;
+  p {
+    margin: 10px 0;
+  }
+}
+
 @mixin showcase {
   background-size: cover;
   background-position: center;
@@ -105,19 +129,6 @@ section#opening-hours {
   justify-content: center;
   align-items:flex-end;
 
-  .button {
-    font-size: 18px;
-    text-decoration: none;
-    color: rgb(73, 75, 72);
-    border: 1px solid rgb(84, 85, 80);
-    background-color: rgb(206, 192, 161);
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    &:hover {
-      background-color: rgb(234, 234, 245);
-    }
-  }
 }
 h1 {
   font-size: 50px;
@@ -131,8 +142,9 @@ h1 {
   display: flex;
   @include showcase;
   background-image: url('https://panteli.biz/static/coffee2a.jpg');
-  // justify-content: right;
-  // align-items: right;
-
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
 }
 </style>
