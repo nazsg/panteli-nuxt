@@ -24,7 +24,7 @@
     <div class="image-container">
       <img class="image-container_image" v-for="(img, index) in total" :key="index" 
         :src="'https://panteli.biz/static/rest/rest' + parseInt(index+1) + '.jpg'"  
-       alt="" />
+      aria-hidden="true" alt="" />
     </div>
   </div>
 </template>
@@ -87,14 +87,12 @@ export default {
 }
 .image-container {
    visibility: hidden;
-  //  width: 50%;
-  //  position: absolute;
+   position: absolute;
  }
  
  .image-container_image {
    visibility: hidden;
-  width: 20%;
-  //  position: absolute;
+   position: absolute;
  }
 
 
@@ -178,6 +176,6 @@ button {
 }
 
 img {
-  // transition: 0.9s;
+  transition: 0.9s;
 }
 </style>

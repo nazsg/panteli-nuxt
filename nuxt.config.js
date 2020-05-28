@@ -25,7 +25,7 @@ export default {
   ** Global CSS
   */
   css: [ 
-    '~assets/styles/main.css'
+    '~assets/styles/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -69,6 +69,6 @@ export default {
   },
   // rootDir : '/',
   router : {
-    // base: '/panteli-nuxt'
+    base: '/panteli-nuxt'
   }
 }

@@ -1,8 +1,12 @@
 <template>
   <div>
-    <div class="image">
-      <img :src="images[img]" alt="">
-    </div>
+    <transition name="fade">
+      <div class="image" >
+        <img :src="images[img]" alt="">
+      </div>
+
+    </transition>
+
   </div>
 </template>
 
@@ -11,11 +15,11 @@ export default {
   data() {
     return {
       images: [
-        'https://panteli.biz/static/chips.jpg',
-        'https://panteli.biz/static/chips2.jpg',
-        'https://panteli.biz/static/cup-smoke.jpg',
-        'https://panteli.biz/static/coffee2a.jpg',
-        'https://panteli.biz/static/coffee.jpg'
+        'https://panteli.biz/static/chips_sm.jpg',
+        'https://panteli.biz/static/chips2_sm.jpg',
+        'https://panteli.biz/static/cup-smoke_sm.jpg',
+        'https://panteli.biz/static/coffee2a_sm.jpg',
+        'https://panteli.biz/static/coffee_sm.jpg'
       ],
       img: 0
     }
@@ -40,11 +44,14 @@ export default {
 
 <style lang="scss" scoped>
 .image {
-  margin: 0 auto;
-  height: 90vh;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 90vh;
   img {
-    width: 100%;
-    overflow: hidden;
+    border-radius: 30px;
+    transition: .9s;
   }
 }
 </style>

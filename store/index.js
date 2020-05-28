@@ -26,7 +26,7 @@ const createStore = () => {
               serverData.push({...res.data[key], id: key })
             }
             vuexContext.commit('setPosts', serverData)
-            console.log(serverData)
+            // console.log(serverData)
             }
           )
           .catch( e => context.error(e))
