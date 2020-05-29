@@ -1,42 +1,18 @@
 <template>
-  <div>
-    <transition name="fade">
-      <div class="image" >
-        <img :src="images[img]" alt="">
-      </div>
-
-    </transition>
+  <div class="find">
+    <iframe data-v-1340ddfc="" width="100%" scrolling="no" height="500px" frameborder="0" src="https://maps.google.co.uk/maps?q=5+canterbury+lane+ct1+2hl&amp;ie=UTF8&amp;hq=&amp;hnear=5+Canterbury+Ln,+Canterbury,+Kent+CT1,+United+Kingdom&amp;ll=51.278192,1.083467&amp;spn=0.010792,0.014634&amp;t=m&amp;z=14&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
 
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      images: [
-        'https://panteli.biz/static/chips_sm.jpg',
-        'https://panteli.biz/static/chips2_sm.jpg',
-        'https://panteli.biz/static/cup-smoke_sm.jpg',
-        'https://panteli.biz/static/coffee2a_sm.jpg',
-        'https://panteli.biz/static/coffee_sm.jpg'
-      ],
-      img: 0
-    }
-  },
-  methods: {
-  },
-  mounted() {
-    setInterval(() => {
-      this.img = Math.floor(Math.random() * 4);     // returns a random integer from 0 to 9
-    }, 5000);    
-  },
   head: {
-    title: 'Find Us',
+    title: "Find Us - PANTELI's of Canterbury",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Find Us description' }
+      { hid: 'description', name: 'description', content: 'We are located at the heart of Canterbury Town. Please follow this map to get to us.' }
     ]
   }  
 }

@@ -1,10 +1,6 @@
 <template>
       <div class="home">
-        <template v-for="(menu, index) in getHome">
-          <div v-if="menu.comments == 'home2'" :key="index">
-            <p v-html="lineBreak(menu.para)"></p>          
-          </div>        
-        </template>        
+        <p v-html="lineBreak(home)"></p>
       </div>  
 </template>
 <script>
@@ -39,9 +35,9 @@ export default {
     }
     
   },
-  created() {
-    axios.get(this.host + 'others')
-    .then(res => this.home = res.data)
+  mounted() {
+    axios.get(this.host + 'home_para')
+    .then(res => this.home = res.data[0].para)
   }
 }
 </script>

@@ -12,7 +12,7 @@
       <template v-for="(menu) in all_menus.filter(m=>m.category == title)" >
         <tr :key="menu.id ">
           <td class="menu_id">{{ menu.id }} </td>
-          <td class="item">{{ menu.item }}</td>          
+          <td class="item"> {{ menu.item }}</td>          
           <td class="price"> &pound; {{ menu.price | twoPlaces }}</td>                   
           <td class="price"> &pound; {{ menu.price2 | twoPlaces }}</td>                   
           <td class="price"> &pound; {{ menu.price3 | twoPlaces }}</td>                         

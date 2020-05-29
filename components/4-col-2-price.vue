@@ -9,9 +9,6 @@
         </thead>
         <tbody>
       <template v-for="(menu) in all_menus.filter(m=>m.category == title)" >
-        <!-- <tr class="category__row" v-if="menu.id === 1" :key="menu.id">
-          <td colspan="4"></td>
-        </tr> -->
         <tr :key="menu.id">
         <td class="menu_id">{{ menu.id }} </td>
         <td class="item">{{ menu.item }}</td>

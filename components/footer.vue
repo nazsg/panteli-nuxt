@@ -1,10 +1,21 @@
 <template>
   <footer>
-<p>
+<ul>
+  <li>
       &copy;2006 - {{new Date().getFullYear() }} Panteli's of CANTERBURY 
-      
-    <Wifi /> <Wheelchair /> <a target=_blank href="http://www.facebook.com/PantelisofCanterbury"><Facebook /></a>
-</p>
+  </li>
+  <li>
+    <div>
+      <Wifi title="Free Wi-Fi" /> <span>Free Wi-Fi</span>
+    </div>
+    <div>
+      <Wheelchair title="Wheelchair Access"/> <span>Wheelchair Access</span>
+    </div>
+    <div>
+      <a target=_blank href="http://www.facebook.com/PantelisofCanterbury"><Facebook /></a>
+    </div>    
+  </li>
+</ul>
   </footer>
 </template>
 

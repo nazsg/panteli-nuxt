@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div class="contact">
     <form >
-      <legend>Personal</legend>
       <li>
         <label for="">Name</label> <input type="text">
       </li>
@@ -16,11 +15,6 @@
         <EmailIcon title="Send Email" :size=46 />
       </li>
     </form>
-
-<svg width="65" height="44" viewBox="0 0 65 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect y="15" width="35" height="14" fill="#C4C4C4"/>
-<path d="M65 22L35 41.0526L35 2.94744L65 22Z" fill="#C4C4C4"/>
-</svg>
 
     <div class="wave"></div>
 
@@ -47,7 +41,7 @@ div.wave {
   width: 100%;
 }
 
-$width: 600px;
+$width: 100%;
 form {
   // background-image: url('/panteli-nuxt/triangle.svg');
   border: 1px solid #000;
@@ -99,9 +93,9 @@ form {
   }
 }
 
-@media (min-width: $width) {
+@media (min-width: 700px) {
   form {
-    width: $width;
+    width: 95%;
     li {
       justify-content: center;
 

@@ -5,7 +5,9 @@
       <p>
         5 & 7 Canterbury Lane, Canterbury, Kent CT1 2HL
         Telephone:
-        <a href="tel:+441227765506">44 (0) 1227 765506</a>
+        <a
+          href="tel:+441227765506"
+        >44 (0) 1227 765506</a>
       </p>
     </div>
     <div class="content">
@@ -33,10 +35,21 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/styles/common.scss';
+$headerBg: #a2cbfc;
+$containerBg: #d6e7fb;
+$bodyText: #4c4c83;
+$footerBg: #85aaf7;
+html {
+    background-color: $containerBg;
+}
 .container_pant {
   width: 100%;
+  background-color: $containerBg;
+  color: $bodyText;
+  // height: 100%;
   .header {
-    background-color: #a2cbfc;
+    background-color: $headerBg;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,7 +81,6 @@ export default {
       max-width: 850px;
       margin: 0 auto;
     }
-
 
     main {
       display: flex;
@@ -150,9 +162,15 @@ export default {
         }
       }
 
-      .home {
+      .contact, .home, .find {
         width: 95%;
         padding: 20px;
+      }
+      .find {
+        iframe {
+          border: 1px solid $footerBg;
+          border-radius: 10px;
+        }
       }
 
       @media (max-width: 649px) {
@@ -216,6 +234,7 @@ export default {
           img {
             // display: flex;
             border-radius: 15px;
+            padding: 0 10px;
           }
         }
       }
@@ -245,7 +264,7 @@ export default {
     }
 
     td.item {
-      width: 70%;
+      width: auto;
     }
     .price {
       width: 50px;
@@ -258,21 +277,35 @@ header {
 }
 footer {
   flex-shrink: 0;
-  background-color: rgba(42, 131, 158, 0.521);
-  
-    padding: 20px;
+  background-color: $footerBg;
+  border-top: 2px solid #5f83d1;
+  padding: 20px;
+  display: flex;
+  letter-spacing: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: bottom right;
+  justify-content: center;
+  ul {
+    list-style-type: none;
     display: flex;
-    // align-items: center;
-    letter-spacing: 4px;
-    font-family: Arial, Helvetica, sans-serif;
-    // background-image: url("/panteli-nuxt/bubbles2.svg");  
-    background-position: bottom right;
-    justify-content: center;
-    p {
-      margin: 0px;
+    flex-direction: column;
+    width: 100%;
+    li {
+      flex-wrap: wrap;
+      display: flex;
+      padding: 5px;
+      justify-content: space-between;
+      line-height: 1.5;
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 10px;
+        span {
+          letter-spacing: normal;
+          margin-left: 10px;
+        }
+      }
     }
-    span {
-      padding: 0 10px;
-    }
+  }
 }
 </style>
