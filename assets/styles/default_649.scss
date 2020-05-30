@@ -1,4 +1,4 @@
-@media (max-width: 649px) {
+@media (max-width: 749px) {
   .container_pant {
     .content {
       main {
@@ -21,11 +21,13 @@
             left: 0;
             top: 0;
             width: 100%;
+            z-index: 5;
             ul {
               width: 100%;
               position: absolute;
               top: 0;
               left: 0;
+              border-bottom: 2px solid $footerBg;
 
               li {
                 width: 100%;

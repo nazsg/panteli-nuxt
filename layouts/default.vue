@@ -52,13 +52,14 @@ html {
   width: 100%;
   background-color: $containerBg;
   color: $bodyText;
+
   .header {
     background-color: $headerBg;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
     border-bottom: 2px solid rgb(130, 169, 216);
 
     section {
@@ -75,6 +76,7 @@ html {
       height: 120px;
       background-image: url("/panteli-nuxt/Panteli-banner-sm.jpg");
       background-position: top center;
+      background-repeat: no-repeat;
       @media (min-width: 520px) {
         background-image: url("/panteli-nuxt/Panteli-banner-big.jpg");
       }
@@ -103,6 +105,8 @@ html {
         align-items: flex-end;
         position: static;
         left: 0;
+        font-family: 'Quicksand', sans-serif;
+        padding-right: 20px;
         width: img {
           display: none;
         }
@@ -110,24 +114,25 @@ html {
           top: -20px;
           left: 0;
           position: absolute;
-          height: 30px;
+          height: 35px;
+          line-height: 35px;
           background-color: #0861b48a;
           width: 100%;
           border-bottom: 1px solid #666;
           color: inherit;
-          @media (min-width: 650px) {
+          @media (min-width: 750px) {
             display: none;
           }
         }
         nav {
           display: none;
-          margin-top: 10px;
+          margin-top: 15px;
           flex-direction: column;
           justify-content: center;
           align-items: flex-end;
           padding: 10px;
           letter-spacing: 2px;
-          font-family: Roboto;
+          // font-family: Roboto;
           width: 100%;
 
           ul {
@@ -172,7 +177,7 @@ html {
       }
       .contact, .home, .find {
         width: 95%;
-        padding: 0 20px;
+        padding: 0 30px;
       }
 
       .contact {
@@ -248,6 +253,7 @@ html {
     }
 
     tr {
+      vertical-align: top;
       &:first-child {
         text-transform: uppercase;
       }
@@ -257,7 +263,7 @@ html {
       width: auto;
     }
     .price {
-      width: 50px;
+      width: 55px;
       text-align: right;
     }
   }

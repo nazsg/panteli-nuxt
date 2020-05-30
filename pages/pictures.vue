@@ -1,6 +1,6 @@
 <template>
   <div id="pictures">
-
+    <h1>Restaurant Images</h1>
     <!-- <div id="overlay"> -->
     <div class="overlay" :class="{ show }">
       <div id="text">
@@ -16,7 +16,6 @@
       </div>
     </div>
     <div class="thumbnail-container">
-      <h3>Restaurant Images</h3>
       <img class="thumb" v-for="(img, index) in total" :key="index" 
         :src="'https://panteli.biz/static/rest/rest' + parseInt(index+1) + '_sm.jpg'" @click="open(parseInt(index+1))" alt="">
     </div>

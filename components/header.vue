@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="#" class="toggle" @click.prevent="menu"><Menu /></a>
+    <a href="#" class="toggle" @click.prevent="menu"><Menu size=34 /></a>
     
     <nav class="menu" :class="{show}">
       <ul>

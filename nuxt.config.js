@@ -13,7 +13,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;700&family=Marck+Script&display=swap' }
+      { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;700&family=Marck+Script&family=Quicksand&display=swap' }
 
     ]
   },
@@ -44,7 +44,7 @@ export default {
     // 'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/vuetify'
+    // '@nuxtjs/vuetify'
   ],
   /*
   ** Axios module configuration
