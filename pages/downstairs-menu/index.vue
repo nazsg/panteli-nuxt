@@ -1,12 +1,14 @@
 <template>
   <div id="downstairs">
     <div class="content">
+    <a name="#top"></a>
     <h1>Downstairs Menu</h1>    
         <tab3Col1price v-for="(menu, index) in group1" :key="index +100" :title=menu :all_menus=all_menus />
         <tab4Col2price v-for="(menu, index) in group2" :key="index +200" :title=menu :all_menus=all_menus />
         <tab5Col3price v-for="(menu, index) in group3" :key="index +300" :title=menu :all_menus=all_menus />
         <tab3Col1price v-for="(menu, index) in group4" :key="index +400" :title=menu :all_menus=all_menus />
     </div>
+    <a title="Go to top" class="goToTop" href="downstairs-menu#top">&#x21e7;</a>
   </div>
 </template>
 

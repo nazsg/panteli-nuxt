@@ -1,9 +1,10 @@
 <template>
   <div id="upstairs">
+    <a name="#top"></a>
     <h1>Upstairs Menu</h1>
   
     <tab3Col1price v-for="(menu, index) in all_cats" :key="index" :title="menu" :all_menus="all_menus" />
-
+    <a title="Go to top" class="goToTop" href="upstairs-menu#top">&#x21e7;</a>
   </div>
 </template>
 

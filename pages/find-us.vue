@@ -1,5 +1,6 @@
 <template>
   <div class="find">
+    <h1>Find Us</h1>
     <iframe data-v-1340ddfc="" width="100%" scrolling="no" height="500px" frameborder="0" src="https://maps.google.co.uk/maps?q=5+canterbury+lane+ct1+2hl&amp;ie=UTF8&amp;hq=&amp;hnear=5+Canterbury+Ln,+Canterbury,+Kent+CT1,+United+Kingdom&amp;ll=51.278192,1.083467&amp;spn=0.010792,0.014634&amp;t=m&amp;z=14&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
 
   </div>

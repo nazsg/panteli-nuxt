@@ -1,0 +1,45 @@
+@media (max-width: 649px) {
+  .container_pant {
+    .content {
+      main {
+        padding-top: 20px;
+        position: relative;
+        // background-color: #fff;
+        width: 100%;
+        left: 0;
+        aside {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          left: 0;
+          img {
+            display: none;
+          }
+
+          nav {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            ul {
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              li {
+                width: 100%;
+                background-color: #fff;
+                padding: 0;
+                a {
+                  width: 100%;
+                  border-radius: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

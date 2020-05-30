@@ -1,14 +1,18 @@
 <template>
   <div class="container_pant">
-    <div class="header">
+    <div class="header">      
       <div class="banner"></div>
-      <p>
-        5 & 7 Canterbury Lane, Canterbury, Kent CT1 2HL
-        Telephone:
-        <a
-          href="tel:+441227765506"
-        >44 (0) 1227 765506</a>
-      </p>
+      <section>
+        <p>
+          5 & 7 Canterbury Lane, Canterbury, Kent CT1 2HL
+        </p>
+        <p> 
+          Telephone:
+          <a
+            href="tel:+441227765506"
+          >44 (0) 1227 765506</a>
+        </p>
+      </section>
     </div>
     <div class="content">
       <main>
@@ -40,6 +44,7 @@ $headerBg: #a2cbfc;
 $containerBg: #d6e7fb;
 $bodyText: #4c4c83;
 $footerBg: #85aaf7;
+
 html {
     background-color: $containerBg;
 }
@@ -47,23 +52,29 @@ html {
   width: 100%;
   background-color: $containerBg;
   color: $bodyText;
-  // height: 100%;
   .header {
     background-color: $headerBg;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-items: center;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     border-bottom: 2px solid rgb(130, 169, 216);
+
+    section {
+      background-color: inherit;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      p {
+        padding: 0 5px;
+      }
+    }
 
     .banner {
       height: 120px;
       background-image: url("/panteli-nuxt/Panteli-banner-sm.jpg");
-      // background-size: 100%;
       background-position: top center;
-      // background-color: #a2cbfc;
       @media (min-width: 520px) {
         background-image: url("/panteli-nuxt/Panteli-banner-big.jpg");
       }
@@ -77,22 +88,15 @@ html {
   .content {
     width: 100%;
     background-color: #d6e7fb;
-    @media (min-width: 650px) {
-      max-width: 850px;
-      margin: 0 auto;
-    }
 
     main {
       display: flex;
       margin: 20px auto;
       width: 95%;
-      // background-color: rgb(189, 182, 182);
       justify-content: center;
       position: static;
 
       aside {
-        // width: 30%;
-        // background-color: #ada3a3;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -132,8 +136,6 @@ html {
             margin: 0;
             width: 100%;
             li {
-              // margin-bottom: 5px 0;
-              // background-color: rgb(51, 49, 49);
               padding: 1px;
               width: 100%;
               a {
@@ -162,92 +164,80 @@ html {
         }
       }
 
-      .contact, .home, .find {
-        width: 95%;
-        padding: 20px;
-      }
       .find {
         iframe {
           border: 1px solid $footerBg;
           border-radius: 10px;
         }
       }
+      .contact, .home, .find {
+        width: 95%;
+        padding: 0 20px;
+      }
 
-      @media (max-width: 649px) {
-        // main
-        position: relative;
-        // background-color: #fff;
-        width: 100%;
-        left: 0;
-
-        aside {
-          position: absolute;
-          top: 0;
-          width: 100%;
-          left: 0;
-          img {
-            display: none;
+      .contact {
+        form {
+          background-color: rgb(181, 218, 253);
+          border: 1px solid $bodyText;
+          border-radius: 7px;
+          input, textarea {
+            background-color: darken($containerBg, 2%);
           }
-
-          nav {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            ul {
-              width: 100%;
-              position: absolute;
-              top: 0;
-              left: 0;
-
-              li {
-                width: 100%;
+          .actions {
+            display: flex;
+            justify-content: space-around;
+            button {
+              border: 1px solid $footerBg;
+              background-color: $containerBg;
+              border-radius: 5px;
+              outline: none;
+              &:hover {
                 background-color: #fff;
-                padding: 0;
-                a {
-                  width: 100%;
-                  border-radius: 0;
-                }
               }
+            }
+            button.disabled {
+              background-color: #999;
+              cursor: not-allowed;
+              color: #a03838;
+              text-decoration: line-through;
             }
           }
         }
       }
-      @media (min-width: 650px) {
-        width: 100%;
-        aside {
-          nav {
+      @media (max-width: 350px) {
+        .contact form {
+          li {
             display: flex;
-            width: 100%;
-            ul {
-              width: 100%;
-              padding: 0;
-              li {
-                // margin-left: -20px;
-                width: 100%;
-                a {
-                  width: 100%;
-                }
-              }
+            flex-direction: column;
+            input, textarea, label {
+              flex-basis: 100%;
             }
-          }
-          img {
-            // display: flex;
-            border-radius: 15px;
-            padding: 0 10px;
           }
         }
       }
     }
   }
 }
+#upstairs, #downstairs {
+  position: relative;
+  .goToTop {
+    position: fixed;
+    bottom: 120px;
+    right: 10px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+@import '../assets/styles/default_650';
+@import '../assets/styles/default_649';
 
 #upstairs,
 #downstairs,
 #pictures {
   width: 95%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 
   table {
     width: 95%;

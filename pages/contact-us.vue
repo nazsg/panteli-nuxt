@@ -1,108 +1,127 @@
 <template>
   <div class="contact">
-    <form >
+    <h1>Contact Us</h1>
+    <div v-if="formSubmitted">
+      <p>
+        Thank you. Your message has been submitted. You will hear from us soon.
+      </p>
+    </div>
+    <form v-else>
       <li>
-        <label for="">Name</label> <input type="text">
+        <label for>Name</label>
+        <input v-model="info.name" type="text" placeholder="Your name" />
+      </li>
+      <li>
+        <label for>Email</label>
+        <input v-model="info.email" type="text" placeholder="Your email" />
+      </li>
+      <li>
+        <label for>Message</label>
+        <textarea name id cols="30" rows="10" v-model="info.message" placeholder="Your message"></textarea>
       </li>
       <li >
-        <label for="">Email</label> <input type="text">
-      </li>      
-      <li >
-        <label for="">Message</label> <textarea name="" id="" cols="30" rows="10"></textarea>
-      </li>      
+          <template v-if="result == 'not ok'">
+        <div class="anti-spam">
+          <h3>Anti-spam (do sum then submit)</h3>
+            <div class="sum">
+              <p>
+                <span class="nos" v-html="no1"></span>
+                <span class="nos">&#x2b;</span>
+                <span class="nos" v-html="no2"></span>
+                <span class="nos">&#x3d;</span>
+              </p>
+              <p>
+                <span
+                  :id="'n' + c.d"
+                  @click="check(c.d)"
+                  class="choices"
+                  v-for="(c, index) in choices"
+                  :key="index"
+                  v-html="c.n"
+                ></span>
+              </p>
+            </div>
+        </div>
+          </template>
+      </li>
       <li class="actions">
-        <DeleteIcon title="Clear" :size=46 /> 
-        <EmailIcon title="Send Email" :size=46 />
+        <button @click.prevent="clear">Clear</button>
+        <button v-if="result == 'ok'" @click.prevent="submit">Submit</button>
+        <button v-else class="disabled" @click.prevent="submit">Submit</button>
       </li>
+      <div class="error">{{ formError }}</div>      
     </form>
-
-    <div class="wave"></div>
-
   </div>
 </template>
 
 <script>
-import EmailIcon from 'vue-material-design-icons/EmailSendOutline.vue'
-import DeleteIcon from 'vue-material-design-icons/TrashCanOutline.vue'
+import wys from "../../functions/norobots";
 export default {
-  components: { EmailIcon, DeleteIcon },
-}
+  data() {
+    return {
+      info: { name: "", email: "", message: "", submitToLaki: true },
+      no1: "",
+      no2: "",
+      sum: "",
+      guess: "",
+      choices: [],
+      result: "not ok", 
+      formSubmitted: false,
+      formError: ''
+    };
+  },
+  methods: {
+    check(val) {
+      let el = "n" + val;
+      if (val == this.sum) {
+        document.getElementById(el).style.color = "green";
+        setTimeout(() => {
+          this.result = "ok";
+        }, 1000);
+      } else {
+        this.result = "not ok";
+        document.getElementById(el).style.color = "red";
+        // setTimeout(() => {
+        //   document.getElementById(el).style.color = "#5e5b5b";
+        // }, 1500);
+      }
+    },
+    clear() {
+      (this.info.name = ""), (this.info.email = ""), (this.info.message = "");
+    },
+    submit() {
+      this.$axios.post("mailer20.php", this.info)
+      .then(res => {
+        if(res.data == 'Success') {
+          this.formSubmitted = true
+        } else {
+          this.formError = 'Sorry your message was not sent. Please try again later.'
+        }
+      })
+    },
+    assign() {
+      this.choices.forEach(c => {
+        if (c.d == this.no1) {
+          this.no1 = c.n;
+        }
+      });
+      this.choices.forEach(c => {
+        if (c.d == this.no2) {
+          this.no2 = c.n;
+        }
+      });
+    }
+  },
+  mounted() {
+    this.no1 = Math.floor(Math.random() * 4 + 1);
+    this.no2 = Math.floor(Math.random() * 5 + 1);
+    this.sum = this.no1 + this.no2;
+    this.choices = wys.choice;
+    this.assign();
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-svg  {
-  // color: red;
-}
-div.wave {
-  // background-image: url("/panteli-nuxt/bubbles2.svg");
-  height: 60px;
-  background-position: bottom right;
-  // background-size: cover;
-  width: 100%;
-}
-
-$width: 100%;
-form {
-  // background-image: url('/panteli-nuxt/triangle.svg');
-  border: 1px solid #000;
-  background-color: rgba(209, 207, 207, 0.733);
-  margin: 10px auto;
-  font-family: Roboto;
-  legend {
-    color: red;
-    display: block;
-    text-align: center;
-    width: 200px;
-    border: 1px solid #000;
-    margin: 0 auto;
-  }
-  input, textarea {
-    border: 1px solid rgb(12, 142, 202);
-    flex-basis: 100%;
-    margin-left: 10px;
-  }
-  display: flex;
-  flex-direction: column;
-  li {
-    * {
-      padding: 7px;
-    }
-    display: flex;
-    
-    // border: 1px solid rgb(170, 25, 25);
-    margin: 7px;
-
-    label {
-      flex-basis: 100px;
-      // background-color: #fff;
-    }
-
-  }
-  .actions {
-    justify-self: center;
-  }
-  a svg {
-    // margin-top: 10px;
-    font-size: 5rem;
-    transition: .5s;
-    &:hover { 
-      color: white;
-      transition: .5s;
-      cursor: pointer;
-    }
-  }
-}
-
-@media (min-width: 700px) {
-  form {
-    width: 95%;
-    li {
-      justify-content: center;
-
-      input, textarea {
-        flex-basis: 400px;
-      }
-    }
-  }
-}
+@import "../assets/styles/contact";
 </style>
