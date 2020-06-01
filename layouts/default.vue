@@ -179,7 +179,14 @@ html {
         width: 95%;
         padding: 0 30px;
       }
-
+      .home {
+        span {
+          margin-top: 10px;
+        }
+        p {
+          letter-spacing: 1.1px;
+        }
+      }
       .contact {
         form {
           background-color: rgb(181, 218, 253);
@@ -234,8 +241,8 @@ html {
     color: inherit;
   }
 }
-@import '../assets/styles/default_650';
-@import '../assets/styles/default_649';
+@import '../assets/styles/default_750';
+@import '../assets/styles/default_749';
 
 #upstairs,
 #downstairs,
@@ -254,9 +261,10 @@ html {
 
     tr {
       vertical-align: top;
-      &:first-child {
-        text-transform: uppercase;
-      }
+      text-transform: lowercase;
+      // &:first-child {
+      //   text-transform:capitalize;
+      // }
     }
 
     td.item {

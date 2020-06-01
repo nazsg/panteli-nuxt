@@ -1,5 +1,6 @@
 <template>
-      <div class="home">
+      <div class="home">  
+        <h2>Welcome to PANTELI's of Canterbury</h2>
         <p v-html="lineBreak(home)"></p>
       </div>  
 </template>
