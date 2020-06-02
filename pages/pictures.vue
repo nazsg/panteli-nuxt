@@ -34,6 +34,14 @@ import ArrowRightBoxIcon from 'vue-material-design-icons/ArrowRightBox.vue';
 import ArrowLeftBoxIcon from 'vue-material-design-icons/ArrowLeftBox.vue';
 import AlphaXBoxIcon from 'vue-material-design-icons/AlphaXBox.vue';
 export default {
+  head: {
+    title: "Restaurant Pictures - PANTELI's of Canterbury",
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Pictures of our restaurant' }
+    ]
+  },    
   components: {
     ArrowRightBoxIcon,
     ArrowLeftBoxIcon,

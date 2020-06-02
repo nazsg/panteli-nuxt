@@ -14,11 +14,11 @@ import tab3Col1price from '@/components/3-col-1-price'
 export default {
   components: { tab3Col1price },
   head: {
-    title: 'Upstairs',
+    title: 'Upstairs Menus | Panteli\'s of Canterbury',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Upstairs description' }
+      { hid: 'description', name: 'description', content: 'Upstairs menus - Main meals, fish, grills, entrees, salads, desserts & ice cream, hot drinks, beers' }
     ]
   },
   data() {

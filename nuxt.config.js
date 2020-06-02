@@ -12,8 +12,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;700&family=Marck+Script&family=Quicksand&display=swap' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon_pan.png' },
+      { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;700&family=Marck+Script&family=Quicksand&family=Tajawal&display=swap' }
 
     ]
   },
@@ -70,6 +70,6 @@ export default {
   },
   // rootDir : '/',
   router : {
-    base: '/panteli-nuxt'
+    // base: '/panteli-nuxt'
   }
 }

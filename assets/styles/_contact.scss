@@ -4,29 +4,45 @@ form {
   // background-color: rgba(209, 207, 207, 0.733);
   margin: 10px auto;
 
-  input,
-  textarea {
-    border: 1px solid rgb(12, 142, 202);
+  input
+   {
+    border: 0px solid rgb(12, 142, 202);
     flex-basis: 100%;
     margin-left: 10px;
+    border-bottom: 1px dashed #999;
+    outline: none;
+    &:focus {
+      border-color: #4e4e4e;
+    }
+  }
+  textarea {
+    border: 1px dashed #999;
+    outline: none;
+    border-radius: 7px;
+    &:focus {
+      border-color: #666;
+    }
   }
   input,
   textarea,
-  label,
+  label {
+    padding: 7px;
+    flex-basis: 100%;
+  }
   button {
     padding: 7px;
+  }
+  ::placeholder {
+    color: #a3a3a3;
   }
   display: flex;
   flex-direction: column;
   li {
     display: flex;
-
-    // border: 1px solid rgb(170, 25, 25);
     margin: 7px;
 
     label {
       flex-basis: 100px;
-      // background-color: #fff;
     }
   }
 
@@ -34,7 +50,6 @@ form {
     justify-self: center;
   }
   a svg {
-    // margin-top: 10px;
     font-size: 5rem;
     transition: 0.5s;
     &:hover {
@@ -56,10 +71,10 @@ form {
     li {
       justify-content: center;
 
-      input,
-      textarea {
-        flex-basis: 400px;
-      }
+      // input,
+      // textarea {
+      //   flex-basis: 400px;
+      // }
     }
   }
 }

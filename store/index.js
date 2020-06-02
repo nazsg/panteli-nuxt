@@ -1,46 +1,32 @@
-import Vuex from 'vuex'
-import axios from 'axios'
+export const state = () => ({
+  test: 'hi from root store',
+})
 
-const createStore = () => {
-  return new Vuex.Store({
-    state: {
-      loadedPosts: []
-    },
-    mutations: { // synchronous
-      setPosts(state, posts) {
-        state.loadedPosts = posts
-      }
-      ,addPost() {
-
-      }
-      ,editPost(){
-
-      }
-    },
-    actions: { // asynchronous
-      nuxtServerInit(vuexContext, context) {          
-        return axios.get('https://nuxt-48a82.firebaseio.com/post.json')
-          .then(res => {
-            const serverData = []
-            for(const key in res.data) {
-              serverData.push({...res.data[key], id: key })
-            }
-            vuexContext.commit('setPosts', serverData)
-            // console.log(serverData)
-            }
-          )
-          .catch( e => context.error(e))
-      },
-      setPosts(vuexStore, posts) {
-        vuexStore.commit('setPosts', posts)
-      }
-    },
-    getters: {
-      loadedPosts(state) {
-        return state.loadedPosts
-      }
-    }
-  })
+export const getters = {
+  getTest: (state) => {
+    return state.test
+  },
 }
 
-export default createStore
+export const mutations = {
+  set_starters(state, arg) {
+    // state.starters = arg[1].starter
+  },
+}
+
+export const actions = {
+  async nuxtServerInit(store, context) {
+    try {
+      const response = await context.$axios.get('orders_2020.php')
+      store.commit('restaurant/set_orders', response.data)
+    } catch (error) {
+      
+    }
+  }
+}
+
+// {{ $store.state.starters }} (state)  <hr />
+// <!-- {{ $store.state.soups }} (state)  <hr /> -->
+// {{ $store.getters.getStarters }} (getters)  <hr /> -->
+// {{ $store.state.main_menu.starters }} (state) <hr /> -->
+// {{ $store.getters['main_menu/getStarters'] }} (getters) <hr /> -->

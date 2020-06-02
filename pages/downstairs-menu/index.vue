@@ -8,7 +8,7 @@
         <tab5Col3price v-for="(menu, index) in group3" :key="index +300" :title=menu :all_menus=all_menus />
         <tab3Col1price v-for="(menu, index) in group4" :key="index +400" :title=menu :all_menus=all_menus />
     </div>
-    <a title="Go to top" class="goToTop" href="downstairs-menu#top">&#x21e7;</a>
+    <a title="Go to top" class="goToTop" href="downstairs-menu#top">&#x21e7; </a>
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Downstairs Menus description' }
+      { hid: 'description', name: 'description', content: 'Downstairs Menus - Paninis, Sandwiches, Rolls, Main Menu, Fish, Grills, Burgers, Entrees, Jacket Potatoes, Salads, Children\'s Menu, Set Breakfast, Vegetarian Breakfast, Pastries & Biscuits, Hot Drinks, Cold Drinks, Desserts & Ice-Cream, Beers' }
     ]
   },  
   filters: {

@@ -8,11 +8,11 @@
 import axios from 'axios'
 export default {
   head: {
-    title: 'Panteli on Nuxt',
+    title: 'Panteli\'s of Canterburyt',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'The HOME page' }
+      { hid: 'description', name: 'description', content: 'Restaurant / Cafe at the heart of Canterbury Town Centre' }
     ]
   },
   data() {

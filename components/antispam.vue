@@ -19,6 +19,7 @@
         ></span>
       </p>
     </div>
+    <p v-html="guess"></p>
   </div>
 </template>
 
@@ -43,9 +44,10 @@ export default {
       let el = "n" + val;
       if (val == this.sum) {
         document.getElementById(el).style.color = "green";
+        this.guess = "<center>Human verified...</center>";
         setTimeout(() => {
-          this.update();
-        }, 1000);
+          this.$emit("updateResult", "verified");
+        }, 1500);
       } else {
         document.getElementById(el).style.color = "red";
       }
@@ -61,14 +63,11 @@ export default {
           this.no2 = c.n;
         }
       });
-    },
-    update() {
-      this.$emit("updateResult", "verified");
     }
   },
   mounted() {
-    this.no1 = Math.floor(Math.random() * 4 + 1);
-    this.no2 = Math.floor(Math.random() * 5 + 1);
+    this.no1 = Math.floor(Math.random() * 4 +1);
+    this.no2 = Math.floor(Math.random() * 5 +1);
     this.sum = this.no1 + this.no2;
     this.choices = wys.choice;
     this.assign();

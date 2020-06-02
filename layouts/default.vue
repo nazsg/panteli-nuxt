@@ -17,7 +17,7 @@
     <div class="content">
       <main>
         <aside>
-          <img src="/panteli-nuxt/front.jpg" alt />
+          <img src="/front.jpg" alt />
           <appHeader />
         </aside>
         <nuxt />
@@ -34,7 +34,7 @@ export default {
   components: {
     appHeader,
     appFooter
-  }
+  },
 };
 </script>
 
@@ -54,7 +54,7 @@ html {
   color: $bodyText;
 
   .header {
-    background-color: $headerBg;
+    background-color: #9ACEFE;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,11 +74,12 @@ html {
 
     .banner {
       height: 120px;
-      background-image: url("/panteli-nuxt/Panteli-banner-sm.jpg");
+      background-image: url("/Panteli-banner-sm.jpg");
       background-position: top center;
       background-repeat: no-repeat;
+      background-color: #9ACEFE;
       @media (min-width: 520px) {
-        background-image: url("/panteli-nuxt/Panteli-banner-big.jpg");
+        background-image: url("/Panteli-banner-big.jpg");
       }
     }
     a {
@@ -106,11 +107,11 @@ html {
         position: static;
         left: 0;
         font-family: 'Quicksand', sans-serif;
-        padding-right: 20px;
         width: img {
           display: none;
         }
         .toggle {
+          z-index: 100;
           top: -20px;
           left: 0;
           position: absolute;
@@ -130,9 +131,7 @@ html {
           flex-direction: column;
           justify-content: center;
           align-items: flex-end;
-          padding: 10px;
           letter-spacing: 2px;
-          // font-family: Roboto;
           width: 100%;
 
           ul {
@@ -142,17 +141,16 @@ html {
             width: 100%;
             li {
               padding: 1px;
-              width: 100%;
               a {
                 display: block;
                 text-decoration: none;
                 padding: 10px;
                 background-color: #9aceff;
-                // margin: 1px 0;
                 border-radius: 5px;
-                width: 100%;
+                transition: .3s;
                 &:hover {
-                  background-color: #fff;
+                  background-color: #80b7eb;
+                  transition: .3s;
                 }
               }
               a:link,
@@ -193,7 +191,7 @@ html {
           border: 1px solid $bodyText;
           border-radius: 7px;
           input, textarea {
-            background-color: darken($containerBg, 2%);
+            background-color: inherit;
           }
           .actions {
             display: flex;
@@ -203,6 +201,7 @@ html {
               background-color: $containerBg;
               border-radius: 5px;
               outline: none;
+              cursor: pointer;
               &:hover {
                 background-color: #fff;
               }
@@ -231,6 +230,10 @@ html {
   }
 }
 #upstairs, #downstairs {
+  h4 {
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
   position: relative;
   .goToTop {
     position: fixed;
@@ -262,9 +265,6 @@ html {
     tr {
       vertical-align: top;
       text-transform: lowercase;
-      // &:first-child {
-      //   text-transform:capitalize;
-      // }
     }
 
     td.item {

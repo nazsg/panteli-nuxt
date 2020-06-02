@@ -21,7 +21,12 @@
 
 html {
   overflow: auto;
-  font-family: 'Quicksand', sans-serif;
+  // font-family: 'Quicksand', sans-serif;
+  font-family: 'Tajawal', sans-serif;
+  
+  .home, #upstairs, #downstairs {
+    font-size: 1.1rem;
+  }
 
 }
 /* container has been used by _grid.styl, quicker this way than an attempt to hack it */
