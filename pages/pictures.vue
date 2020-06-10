@@ -2,7 +2,7 @@
   <div id="pictures">
     <h1>Restaurant Images</h1>
     <!-- <div id="overlay"> -->
-    <div class="overlay" :class="{ show }">
+    <div class="overlay" :class="{ show }" @click.self="close">
       <div id="text">
       <img :src="'https://panteli.biz/static/rest/rest' + currentImage + '.jpg'"  alt="">
       </div>
