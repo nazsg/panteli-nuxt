@@ -11,11 +11,16 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
+    script: [
+      {
+        src:"https://www.w3counter.com/tracker.js?id=132231",
+      }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon_pan.png' },
       { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;700&family=Marck+Script&family=Quicksand&family=Tajawal&display=swap' }
 
-    ]
+    ],
   },
   /*
   ** Customize the progress-bar color
@@ -24,7 +29,7 @@ export default {
   /*
   ** Global CSS
   */
-  css: [ 
+  css: [
     '~assets/styles/main.scss'
   ],
   /*
@@ -65,11 +70,11 @@ export default {
     }
   },
   pageTransition: { // refers to ~assets/styles/main.css
-    name: 'fade', 
+    name: 'fade',
     mode: 'out-in'
   },
   // rootDir : '/',
-  router : {
+  router: {
     // base: '/panteli-nuxt'
   }
 }

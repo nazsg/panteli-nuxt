@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="#" class="toggle" @click.prevent="menu"><Menu size=34 /></a>
+    <a href="#" class="toggle" @click.prevent="menu"><Menu :size=size /></a>
     
     <nav class="menu" :class="{show}">
       <ul>
@@ -34,7 +34,8 @@ export default {
   data() {
     return {
       show: false,
-      hideNav: false
+      hideNav: false,
+      size: 34
     }
   },
   methods: {
@@ -55,4 +56,5 @@ aside nav.menu.show {
 .hideNav {
   display: none;
 }
+
 </style>

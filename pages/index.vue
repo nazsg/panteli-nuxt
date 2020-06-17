@@ -1,5 +1,5 @@
 <template>
-      <div class="home">  
+      <div class="home" @click.self="test">  
         <h2>Welcome to PANTELI's of Canterbury</h2>
         <p v-html="lineBreak(home)"></p>
       </div>  
@@ -8,7 +8,7 @@
 import axios from 'axios'
 export default {
   head: {
-    title: 'Panteli\'s of Canterburyt',
+    title: 'Panteli\'s of Canterbury',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,7 +17,6 @@ export default {
   },
   data() {
     return {
-      test: '',
       host: 'https://panteli.biz/',
       home: ''
     }
@@ -27,6 +26,10 @@ export default {
   methods: {
     lineBreak(value) {
       return value.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    },
+    test() {
+      alert('test')
+      console.log('test')
     }
 
   },

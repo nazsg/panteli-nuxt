@@ -1,5 +1,5 @@
 <template>
-  <div class="container_pant">
+  <div class="container_pant" >
     <div class="header">      
       <div class="banner"></div>
       <section>
@@ -35,6 +35,13 @@ export default {
     appHeader,
     appFooter
   },
+  data() {
+    return {
+      test2: ''
+    }
+  },
+  methods: {
+  }
 };
 </script>
 
