@@ -8,10 +8,11 @@
           <nuxt-link  to="/" >Home</nuxt-link>
         </li>
         <li @click.prevent="close">
-          <nuxt-link to="/upstairs-menu" >Upstairs Menu</nuxt-link>
+          <nuxt-link to="/upstairs-menu#top">Upstairs Menu</nuxt-link>
+          <!-- <nuxt-link to="/upstairs-menu" :exact="$route.name.includes('upstairs')">Upstairs Menu</nuxt-link> -->
         </li>
         <li @click.prevent="close">
-          <nuxt-link to="/downstairs-menu" >Downstairs Menu</nuxt-link>
+          <nuxt-link to="/downstairs-menu#top" >Downstairs Menu</nuxt-link>
         </li>
         <li @click.prevent="close">
           <nuxt-link to="/pictures" >Pictures</nuxt-link>
