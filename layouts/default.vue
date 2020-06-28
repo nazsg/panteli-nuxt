@@ -1,16 +1,14 @@
 <template>
-  <div class="container_pant" >
-    <div class="header">      
+  <div class="container_pant">
+    <div class="header">
       <div class="banner"></div>
       <section>
         <p>
           5 & 7 Canterbury Lane, Canterbury, Kent CT1 2HL
         </p>
-        <p> 
+        <p>
           Telephone:
-          <a
-            href="tel:+441227765506"
-          >44 (0) 1227 765506</a>
+          <a href="tel:+441227765506">44 (0) 1227 765506</a>
         </p>
       </section>
     </div>
@@ -37,23 +35,32 @@ export default {
   },
   data() {
     return {
-      test2: ''
-    }
+      test2: ""
+    };
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
 <style lang="scss">
-@import '~/assets/styles/common.scss';
+@import "~/assets/styles/common.scss";
 $headerBg: #a2cbfc;
 $containerBg: #d6e7fb;
 $bodyText: #4c4c83;
 $footerBg: #85aaf7;
-
+@mixin button {
+  border: 1px solid $footerBg;
+  background-color: $containerBg;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 10px;
+  &:hover {
+    background-color: #fff;
+  }
+}
 html {
-    background-color: $containerBg;
+  background-color: $containerBg;
 }
 .container_pant {
   width: 100%;
@@ -61,7 +68,7 @@ html {
   color: $bodyText;
 
   .header {
-    background-color: #9ACEFE;
+    background-color: #9acefe;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,7 +91,7 @@ html {
       background-image: url("/Panteli-banner-sm.jpg");
       background-position: top center;
       background-repeat: no-repeat;
-      background-color: #9ACEFE;
+      background-color: #9acefe;
       @media (min-width: 520px) {
         background-image: url("/Panteli-banner-big.jpg");
       }
@@ -113,7 +120,7 @@ html {
         align-items: flex-end;
         position: static;
         left: 0;
-        font-family: 'Quicksand', sans-serif;
+        font-family: "Quicksand", sans-serif;
         width: img {
           display: none;
         }
@@ -154,10 +161,10 @@ html {
                 padding: 10px;
                 background-color: #9aceff;
                 border-radius: 5px;
-                transition: .3s;
+                transition: 0.3s;
                 &:hover {
                   background-color: #80b7eb;
-                  transition: .3s;
+                  transition: 0.3s;
                 }
               }
               a:link,
@@ -173,16 +180,20 @@ html {
           }
         }
       }
-
       .find {
         iframe {
           border: 1px solid $footerBg;
           border-radius: 10px;
         }
       }
-      .contact, .home, .find {
+      .contact,
+      .home, .covid,
+      .find {
         width: 95%;
         padding: 0 30px;
+      }
+      .covid {
+        text-align: center;
       }
       .home {
         span {
@@ -190,6 +201,14 @@ html {
         }
         p {
           letter-spacing: 1.1px;
+          text-align: center;
+        }
+        button, a {
+          @include button;
+        }
+        a {
+          text-decoration: none;
+
         }
       }
       .contact {
@@ -197,21 +216,15 @@ html {
           background-color: rgb(181, 218, 253);
           border: 1px solid $bodyText;
           border-radius: 7px;
-          input, textarea {
+          input,
+          textarea {
             background-color: inherit;
           }
           .actions {
             display: flex;
             justify-content: space-around;
             button {
-              border: 1px solid $footerBg;
-              background-color: $containerBg;
-              border-radius: 5px;
-              outline: none;
-              cursor: pointer;
-              &:hover {
-                background-color: #fff;
-              }
+              @include button;
             }
             button.disabled {
               background-color: #999;
@@ -227,7 +240,9 @@ html {
           li {
             display: flex;
             flex-direction: column;
-            input, textarea, label {
+            input,
+            textarea,
+            label {
               flex-basis: 100%;
             }
           }
@@ -236,7 +251,8 @@ html {
     }
   }
 }
-#upstairs, #downstairs {
+#upstairs,
+#downstairs {
   h4 {
     margin-bottom: 10px;
     letter-spacing: 2px;
@@ -251,8 +267,8 @@ html {
     color: inherit;
   }
 }
-@import '../assets/styles/default_750';
-@import '../assets/styles/default_749';
+@import "../assets/styles/default_750";
+@import "../assets/styles/default_749";
 
 #upstairs,
 #downstairs,

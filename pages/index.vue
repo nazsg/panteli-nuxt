@@ -2,6 +2,7 @@
       <div class="home" >  
         <h2>Welcome to PANTELI's of Canterbury</h2>
         <p v-html="lineBreak(home)"></p>
+        <nuxt-link to="covid">More...</nuxt-link>
       </div>  
 </template>
 <script>

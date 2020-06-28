@@ -1,0 +1,78 @@
+<template>
+  <div class="covid">
+    <h3>Covid-19 Social Distancing</h3>
+    <img src="/covid.jpg" alt="Covid-19 Social Distancing" />
+
+    <p>
+      PLEASE QUEUE IN AN ORDERLY FASHION <br />
+      OBSERVING SOCIAL DISTANCING <br />
+      FACE COVERINGS ARE ADVISED.
+    </p>
+    <p>
+      UPON ENTERING YOU WILL BE ASKED TO
+      ENTER YOUR NAME AND TELEPHONE NUMBER IN THE
+      CUSTOMER REGISTER TO ENABLE EFFICIENT
+      TRACK AND TRACE MEASURES. <br />
+
+      PLEASE USE HAND SANITISER WHICH IS
+      AVAILABLE THROUGHOUT THE PREMISES AND
+      ESPECIALLY UPON ENTRY.
+    </p>
+    <p>
+      PLEASE ORDER YOUR FOOD ON ENTRY GIVING
+      YOUR NAME AND PROCEED TO CASHIER. <br />
+      PLEASE PAY BY CC IF POSSIBLE ALTHOUGH WE
+      WILL ACCEPT CASH.
+    </p>
+    <p>
+      DISPOSABLE MENUS ARE AVAILABLE ON THE
+      COUNTER AND ARE FOR ONE USE ONLY. <br />
+      PLEASE DO NOT REPLACE THEM IN THE MENU
+      HOLDERS ON THE COUNTER.
+    </p>
+    <p>
+      PROCEED TO YOUR TABLE AND WAIT FOR CALL
+      THAT YOUR ORDER IS READY. <br />
+      PLEASE TAKE CARE WHEN PASSING OTHER
+      CUSTOMERS, PASSING SIDEWAYS OR BACK TO
+      BACK WHERE POSSIBLE. <br />
+      AT THE TABLE PLEASE TRY AND AVOID FACE TO
+      FACE SEATING AND WHERE POSSIBLE WEAR
+      FACE COVERINGS.
+    </p>
+    <p>
+      (THIS IS THE 1mtr plus rule IN THE
+      GOVERNMENT ALTERNATIVE TO 2mtr distancing)
+    </p>
+    <p>
+      YOUR ORDER WILL BE BROUGHT TO YOUR
+      TABLE ALONG WITH CUTLERY AND
+      CONDIMENTS.br />
+      WE WILL DO EVERYTHING WE CAN TO MAKE
+      YOUR VISIT SAFE AND COMFORTABLE.
+    </p>
+    <p>
+      WITH LIMITED SPACE, WE WOULD ASK YOU TO
+      VACATE YOUR TABLE AS SOON AS YOU FEEL
+      COMFORTABLE TO DO SO.
+    </p>
+
+    <p>
+      IF YOU HAVE ANY CONCERNS PLEASE SPEAK TO
+      ANY MEMBER OF STAFF.
+      THANK YOU AND LOOK FORWARD TO SEEING
+      YOU AGAIN.
+    </p>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+img,
+p {
+  padding: 10px 0;
+}
+</style>
