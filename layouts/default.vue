@@ -196,12 +196,17 @@ html {
         text-align: center;
       }
       .home {
+        // a {
+        //   display: inline-block;
+        //   margin-top: 20px;
+        // }
         span {
           margin-top: 10px;
         }
         p {
           letter-spacing: 1.1px;
           text-align: center;
+          padding-bottom: 10px;
         }
         button, a {
           @include button;
