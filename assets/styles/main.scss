@@ -1,16 +1,19 @@
-@import '../../../normalize.css';
-@import '../../../mixins/common';
+// @import '../../../normalize.css';
+@import "../../../mixins/common";
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 :root {
   --myColor: red;
 }
-*, p {
+*,
+p {
   margin: 0;
   padding: 0;
   h1 {
@@ -22,15 +25,16 @@
 html {
   overflow: auto;
   // font-family: 'Quicksand', sans-serif;
-  font-family: 'Tajawal', sans-serif;
-  
-  .home, #upstairs, #downstairs {
+  font-family: "Tajawal", sans-serif;
+
+  .home,
+  #upstairs,
+  #downstairs {
     font-size: 1.1rem;
   }
-
 }
 /* container has been used by _grid.styl, quicker this way than an attempt to hack it */
-.container_pant { 
+.container_pant {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -50,4 +54,3 @@ section {
   height: 5px;
   /* border: 1px solid rgb(241, 239, 239); */
 }
-

@@ -1,65 +1,81 @@
 <template>
-      <div class="home" >  
-        <!-- <h2>Welcome to PANTELI's of Canterbury</h2> -->
-        <p v-html="lineBreak(home)"></p>
-        <nuxt-link to="covid">More on Covid-19</nuxt-link>
-      </div>  
+  <div class="home">
+    <!-- <h2>Welcome to PANTELI's of Canterbury</h2> -->
+    <img src="panteli_front1a.jpg" alt="" />
+    <p v-html="lineBreak(home)"></p>
+    <img
+      class="img"
+      src="panteli__eat-out-to-help-out.jpg"
+      alt="eat out to help out"
+    />
+    <br />
+    <p>Please observe social distancing.</p>
+    <nuxt-link to="covid">More on Covid-19</nuxt-link>
+    <img src="panteli_front2a.jpg" alt="" />
+  </div>
 </template>
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   head: {
-    title: 'Panteli\'s of Canterbury',
+    title: "Panteli's of Canterbury",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Restaurant / Cafe at the heart of Canterbury Town Centre' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content: "Restaurant / Cafe at the heart of Canterbury Town Centre"
+      }
     ]
   },
   data() {
     return {
-      host: 'https://panteli.biz/',
-      home: ''
-    }
+      host: "https://panteli.biz/",
+      home: ""
+    };
   },
-  components: {
-  },
+  components: {},
   methods: {
     lineBreak(value) {
-      return value.replace(/(?:\r\n|\r|\n)/g, '<br />');
+      return value.replace(/(?:\r\n|\r|\n)/g, "<br />");
     },
     test() {
-      alert('test')
-      console.log('test')
+      alert("test");
+      console.log("test");
     }
-
   },
   computed: {
     getHome() {
-      return this.$bus.home //.map(h => h.id === 1)
+      return this.$bus.home; //.map(h => h.id === 1)
     }
-    
   },
   mounted() {
-    axios.get(this.host + 'home_para')
-    .then(res => this.home = res.data[0].para)
+    axios
+      .get(this.host + "home_para")
+      .then(res => (this.home = res.data[0].para));
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-$bg : rgba(60, 65, 90, 0.664);
-
+$bg: rgba(60, 65, 90, 0.664);
+.img,
+img {
+  margin: 15px 0;
+  width: 100%;
+}
 @mixin textBox {
   background-color: rgba(60, 65, 90, 0.664);
   padding: 30px 20px;
   color: rgb(194, 181, 181);
   border-radius: 15px;
   // width: 50%;
-  font-family: Verdana; 
+  font-family: Verdana;
   letter-spacing: 2px;
-  button, a {
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  button,
+  a {
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 18px;
     text-decoration: none;
     color: rgb(73, 75, 72);
@@ -73,7 +89,6 @@ $bg : rgba(60, 65, 90, 0.664);
   }
 }
 
-
 @mixin showcase {
   background-size: cover;
   background-position: center;
@@ -85,8 +100,7 @@ $bg : rgba(60, 65, 90, 0.664);
   // display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:flex-end;
-
+  align-items: flex-end;
 }
 h1 {
   font-size: 50px;
@@ -94,12 +108,12 @@ h1 {
 }
 #showcase2 {
   @include showcase;
-  background-image: url('https://panteli.biz/static/coffee.jpg');
+  background-image: url("https://panteli.biz/static/coffee.jpg");
 }
 #showcase {
   display: flex;
   @include showcase;
-  background-image: url('https://panteli.biz/static/coffee2a.jpg');
+  background-image: url("https://panteli.biz/static/coffee2a.jpg");
 }
 .buttons {
   display: flex;
