@@ -1,24 +1,28 @@
 <template>
   <div>
-    <h4>{{title}}</h4>
+    <h4>{{ title }}</h4>
     <table border="0">
-        <thead>
-          <tr class="row_header">
-            <td colspan="2"></td> <td class="price">Small</td> <td class="price">Large</td>
-          </tr>
-        </thead>
-        <tbody>
-      <template v-for="(menu) in all_menus.filter(m=>m.category == title)" >
-        <tr :key="menu.id">
-        <td class="menu_id">{{ menu.id }} </td>
-        <td class="item">{{ menu.item }}</td>
-        
-        <td class="price" colspan=""> &pound; {{ menu.price | twoPlaces }}</td>                   
-        <td class="price" colspan=""> &pound; {{ menu.price2 | twoPlaces }}</td>                   
-      
+      <thead>
+        <tr class="row_header">
+          <td colspan="2"></td>
+          <td class="price">Small</td>
+          <td class="price">Large</td>
         </tr>
-      </template>                       
-        </tbody>
+      </thead>
+      <tbody>
+        <template v-for="menu in all_menus.filter(m => m.category == title)">
+          <tr :key="menu.id">
+            <td class="menu_id">{{ menu.id }}</td>
+            <td class="item">{{ menu.item }}</td>
+
+            <td v-if="menu.price == '0.00'" class="price" colspan="">
+              --
+            </td>
+            <td v-else class="price" colspan="">&pound; {{ menu.price | twoPlaces }}</td>
+            <td class="price" colspan="">&pound; {{ menu.price2 | twoPlaces }}</td>
+          </tr>
+        </template>
+      </tbody>
     </table>
   </div>
 </template>
@@ -29,8 +33,8 @@ export default {
   filters: {
     twoPlaces(val) {
       return val.toFixed(2)
-    }
-  },  
+    },
+  },
 }
 </script>
 
@@ -39,7 +43,4 @@ h4 {
   text-transform: uppercase;
   margin-top: 20px;
 }
-
-
-
 </style>
