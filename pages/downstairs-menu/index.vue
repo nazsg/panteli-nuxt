@@ -92,6 +92,6 @@ export default {
     this.$axios.get(url + 'downstairs.php').then(res => {
       this.all_menus = res.data
     })
-  },
+  }, // TABLE: menus_downstairs_2020
 }
 </script>
