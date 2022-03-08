@@ -3,11 +3,7 @@
     <!-- <h2>Welcome to PANTELI's of Canterbury</h2> -->
     <img src="panteli_front1a.jpg" alt="" />
     <p v-html="lineBreak(home)"></p>
-    <img
-      class="img"
-      src="panteli__eat-out-to-help-out.jpg"
-      alt="eat out to help out"
-    />
+    <img class="img" src="panteli__eat-out-to-help-out.jpg" alt="eat out to help out" />
     <br />
     <p>Please observe social distancing.</p>
     <nuxt-link to="covid">More on Covid-19</nuxt-link>
@@ -15,47 +11,44 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
   head: {
     title: "Panteli's of Canterbury",
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: "description",
-        name: "description",
-        content: "Restaurant / Cafe at the heart of Canterbury Town Centre"
-      }
-    ]
+        hid: 'description',
+        name: 'description',
+        content: 'Restaurant / Cafe at the heart of Canterbury Town Centre',
+      },
+    ],
   },
   data() {
     return {
-      host: "https://panteli.biz/",
-      home: ""
-    };
+      host: 'https://panteli.biz/',
+      home: '',
+    }
   },
   components: {},
   methods: {
     lineBreak(value) {
-      return value.replace(/(?:\r\n|\r|\n)/g, "<br />");
+      return value.replace(/(?:\r\n|\r|\n)/g, '<br />')
     },
     test() {
-      alert("test");
-      console.log("test");
-    }
+      alert('test')
+      console.log('test')
+    },
   },
   computed: {
     getHome() {
-      return this.$bus.home; //.map(h => h.id === 1)
-    }
+      return this.$bus.home //.map(h => h.id === 1)
+    },
   },
   mounted() {
-    axios
-      .get(this.host + "home_para")
-      .then(res => (this.home = res.data[0].para));
-  }
-};
+    axios.get(this.host + 'home_para').then(res => (this.home = res.data[0].para))
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -75,7 +68,7 @@ img {
   letter-spacing: 2px;
   button,
   a {
-    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     text-decoration: none;
     color: rgb(73, 75, 72);
@@ -108,12 +101,12 @@ h1 {
 }
 #showcase2 {
   @include showcase;
-  background-image: url("https://panteli.biz/static/coffee.jpg");
+  background-image: url('https://panteli.biz/static/coffee.jpg');
 }
 #showcase {
   display: flex;
   @include showcase;
-  background-image: url("https://panteli.biz/static/coffee2a.jpg");
+  background-image: url('https://panteli.biz/static/coffee2a.jpg');
 }
 .buttons {
   display: flex;

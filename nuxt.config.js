@@ -90,6 +90,6 @@ export default {
   },
   // rootDir : '/',
   router: {
-    // base: '/panteli-nuxt'
+    base: '/pan',
   },
 }
