@@ -90,6 +90,6 @@ export default {
   },
   // rootDir : '/',
   router: {
-    base: '/pan',
+    // base: '/pan/',
   },
 }

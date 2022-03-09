@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <h2>Welcome to PANTELI's of Canterbury</h2> -->
     <img src="panteli_front1a.jpg" alt="" />
-    <p v-html="lineBreak(home)"></p>
+    <div v-html="lineBreak(home2)"></div>
     <img class="img" src="panteli__eat-out-to-help-out.jpg" alt="eat out to help out" />
     <br />
     <p>Please observe social distancing.</p>
@@ -47,6 +47,19 @@ export default {
   },
   mounted() {
     axios.get(this.host + 'home_para').then(res => (this.home = res.data[0].para))
+  },
+  asyncData(context) {
+    return context.$axios
+      .get('home_para')
+      .then(res => {
+        return { home2: res.data[0].para }
+      })
+      .catch(error => {
+        context.error({
+          message: 'ajax problem', // if custom error set
+        })
+        // context.redirect('/')
+      })
   },
 }
 </script>

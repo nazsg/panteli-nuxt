@@ -2,15 +2,15 @@
   <div class="container_pant">
     <div class="header">
       <div class="banner"></div>
-      <section>
-        <p>
+      <div>
+        <span>
           5 & 7 Canterbury Lane, Canterbury, Kent CT1 2HL
-        </p>
-        <p>
+        </span>
+        <span>
           Telephone:
           <a href="tel:+441227765506">44 (0) 1227 765506</a>
-        </p>
-      </section>
+        </span>
+      </div>
     </div>
     <div class="content">
       <main>
@@ -26,24 +26,24 @@
 </template>
 
 <script>
-import appHeader from "~/components/header";
-import appFooter from "~/components/footer";
+import appHeader from '~/components/header'
+import appFooter from '~/components/footer'
 export default {
   components: {
     appHeader,
-    appFooter
+    appFooter,
   },
   data() {
     return {
-      test2: ""
-    };
+      test2: '',
+    }
   },
-  methods: {}
-};
+  methods: {},
+}
 </script>
 
 <style lang="scss">
-@import "~/assets/styles/common.scss";
+@import '~/assets/styles/common.scss';
 $headerBg: #a2cbfc;
 $containerBg: #d6e7fb;
 $bodyText: #4c4c83;
@@ -86,14 +86,17 @@ html {
       }
     }
 
+    section span {
+      padding: 0 5px;
+    }
     .banner {
       height: 120px;
-      background-image: url("/Panteli-banner-sm.jpg");
+      background-image: url('/Panteli-banner-sm.jpg');
       background-position: top center;
       background-repeat: no-repeat;
       background-color: #9acefe;
       @media (min-width: 520px) {
-        background-image: url("/Panteli-banner-big.jpg");
+        background-image: url('/Panteli-banner-big.jpg');
       }
     }
     a {
@@ -120,8 +123,8 @@ html {
         align-items: flex-end;
         position: static;
         left: 0;
-        font-family: "Quicksand", sans-serif;
-        width: img {
+        font-family: 'Quicksand', sans-serif;
+        img {
           display: none;
         }
         .toggle {
@@ -187,7 +190,8 @@ html {
         }
       }
       .contact,
-      .home, .covid,
+      .home,
+      .covid,
       .find {
         width: 95%;
         padding: 0 30px;
@@ -203,17 +207,18 @@ html {
         span {
           margin-top: 10px;
         }
+        h2,
         p {
           letter-spacing: 1.1px;
           text-align: center;
           padding-bottom: 10px;
         }
-        button, a {
+        button,
+        a {
           @include button;
         }
         a {
           text-decoration: none;
-
         }
       }
       .contact {
@@ -272,8 +277,8 @@ html {
     color: inherit;
   }
 }
-@import "../assets/styles/default_750";
-@import "../assets/styles/default_749";
+@import '../assets/styles/default_750';
+@import '../assets/styles/default_749';
 
 #upstairs,
 #downstairs,
