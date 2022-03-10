@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h4 v-if="title == 'AFTER PASTRIES'"></h4>
+    <!-- <h4 v-if="title == 'AFTER PASTRIES'"></h4>
     <h4 v-else-if="title == 'SNACKS'"></h4>
     <h4 v-else-if="title == 'no cat'"></h4>
-    <h4 v-else>{{ title }}</h4>
+    <h4 v-else>{{ title }}</h4> -->
+    <h4>{{ title | title2 }}</h4>
     <table>
       <tbody>
         <template v-for="menu in all_menus.filter(m => m.category == title)">
@@ -29,7 +30,15 @@ export default {
     twoPlaces(val) {
       return val.toFixed(2)
     },
+    title2(title) {
+      if (title == 'NO CAT') {
+        return ''
+      } else {
+        return title
+      }
+    },
   },
+  computed: {},
 }
 </script>
 
