@@ -1,6 +1,6 @@
 <template>
   <div id="upstairs">
-    <a name="#top"></a>
+    <a id="#top"></a>
     <h1>Upstairs Menu</h1>
 
     <tab3Col1price
@@ -9,7 +9,7 @@
       :title="menu"
       :all_menus="all_menus"
     />
-    <a title="Go to top" class="goToTop" href="upstairs-menu#top">&#x21e7;</a>
+    <a title="Go to top" class="goToTop" href="/upstairs-menu#top">&#x21e7;</a>
   </div>
 </template>
 

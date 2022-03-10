@@ -4,48 +4,65 @@
     <!-- <div id="overlay"> -->
     <div class="overlay" :class="{ show }" @click.self="close">
       <div id="text">
-      <img :src="'https://panteli.biz/static/rest/rest' + currentImage + '.jpg'"  alt="">
+        <img
+          :src="'https://panteli.biz/static/rest/rest' + currentImage + '.jpg'"
+          alt=""
+        />
       </div>
       <div class="buttons">
-        <a class="icon" @click="prev" v-if="currentImage != min"><ArrowLeftBoxIcon title="Previous Image" :size="40" /></a>
-        <a v-else class="disable icon"><ArrowLeftBoxIcon  :size="40" /></a>
-        <a class="icon" @click="close"><AlphaXBoxIcon title="Close Gallery" :size="40" /></a>
-        <a class="icon" @click="next" v-if="currentImage != max"><ArrowRightBoxIcon title="Next Image" :size="40" /></a>
-        <a @click="next" v-else class="disable icon"><ArrowRightBoxIcon :size="40" /></a>
-
+        <a class="icon" @click="prev" v-if="currentImage != min"
+          ><ArrowLeftBoxIcon title="Previous Image" :size="40"
+        /></a>
+        <a v-else class="disable icon"><ArrowLeftBoxIcon :size="40"/></a>
+        <a class="icon" @click="close"
+          ><AlphaXBoxIcon title="Close Gallery" :size="40"
+        /></a>
+        <a class="icon" @click="next" v-if="currentImage != max"
+          ><ArrowRightBoxIcon title="Next Image" :size="40"
+        /></a>
+        <a @click="next" v-else class="disable icon"><ArrowRightBoxIcon :size="40"/></a>
       </div>
     </div>
     <div class="thumbnail-container">
-      <img class="thumb" v-for="(img, index) in total" :key="index" 
-        :src="'https://panteli.biz/static/rest/rest' + parseInt(index+1) + '_sm.jpg'" @click="open(parseInt(index+1))" alt="">
+      <img
+        class="thumb"
+        v-for="(img, index) in total"
+        :key="index"
+        :src="'https://panteli.biz/static/rest/rest' + parseInt(index + 1) + '_sm.jpg'"
+        @click="open(parseInt(index + 1))"
+        alt=""
+      />
     </div>
 
     <div class="image-container">
-      <img class="image-container_image" v-for="(img, index) in total" :key="index" 
-        :src="'https://panteli.biz/static/rest/rest' + parseInt(index+1) + '.jpg'"  
-       alt="" />
+      <img
+        class="image-container_image"
+        v-for="(img, index) in total"
+        :key="index"
+        :src="'https://panteli.biz/static/rest/rest' + parseInt(index + 1) + '.jpg'"
+        alt=""
+      />
     </div>
   </div>
 </template>
 
 <script>
 // import ForwardIcon from 'vue-material-design-icons/Forward.vue';
-import ArrowRightBoxIcon from 'vue-material-design-icons/ArrowRightBox.vue';
-import ArrowLeftBoxIcon from 'vue-material-design-icons/ArrowLeftBox.vue';
-import AlphaXBoxIcon from 'vue-material-design-icons/AlphaXBox.vue';
+import ArrowRightBoxIcon from 'vue-material-design-icons/ArrowRightBox.vue'
+import ArrowLeftBoxIcon from 'vue-material-design-icons/ArrowLeftBox.vue'
+import AlphaXBoxIcon from 'vue-material-design-icons/AlphaXBox.vue'
 export default {
   head: {
     title: "Restaurant Pictures - PANTELI's of Canterbury",
     meta: [
-      { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Pictures of our restaurant' }
-    ]
-  },    
+      { hid: 'description', name: 'description', content: 'Pictures of our restaurant' },
+    ],
+  },
   components: {
     ArrowRightBoxIcon,
     ArrowLeftBoxIcon,
-    AlphaXBoxIcon
+    AlphaXBoxIcon,
   },
   data() {
     return {
@@ -55,7 +72,7 @@ export default {
       min: 1,
       disable: true,
       disableNext: false,
-      total: 10
+      total: 10,
     }
   },
   methods: {
@@ -67,20 +84,17 @@ export default {
       this.show = false
     },
     next() {
-      this.currentImage ++        
+      this.currentImage++
     },
     prev() {
-      this.currentImage --
-    }
+      this.currentImage--
+    },
   },
-  created() {
-  }
-
+  created() {},
 }
 </script>
 
 <style lang="scss" scoped>
-
 .thumbnail-container {
   // background-color: #000;
   padding: 20px;
@@ -93,18 +107,16 @@ export default {
   }
 }
 .image-container {
-   visibility: hidden;
+  visibility: hidden;
   //  width: 50%;
   //  position: absolute;
- }
- 
- .image-container_image {
-   visibility: hidden;
+}
+
+.image-container_image {
+  visibility: hidden;
   width: 20%;
   //  position: absolute;
- }
-
-
+}
 
 .thumb {
   padding: 5px;
@@ -126,7 +138,6 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
   }
 }
-
 
 a.icon {
   cursor: pointer;
@@ -171,16 +182,15 @@ button {
   display: flex;
   // width: 100%;
   justify-content: center;
-  #text{
+  #text {
     // width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     // font-size: 50px;
     // color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
   }
 }
 

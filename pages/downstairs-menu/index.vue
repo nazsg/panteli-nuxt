@@ -1,7 +1,7 @@
 <template>
   <div id="downstairs">
     <div class="content">
-      <a name="#top"></a>
+      <a id="#top"></a>
       <h1>Downstairs Menu</h1>
       <tab3Col1price
         v-for="(menu, index) in group1"
@@ -28,7 +28,7 @@
         :all_menus="all_menus"
       />
     </div>
-    <a title="Go to top" class="goToTop" href="downstairs-menu#top">&#x21e7; </a>
+    <a title="Go to top" class="goToTop" href="/downstairs-menu#top">&#x21e7; </a>
   </div>
 </template>
 
