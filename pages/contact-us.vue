@@ -40,8 +40,8 @@
           </button>
           <button v-else class="disabled" @click.prevent>Submit</button>
         </li>
-        <div class="error">{{ formError }}</div>
       </ul>
+      <span class="error">{{ formError }}</span>
     </form>
   </div>
 </template>
