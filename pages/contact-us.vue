@@ -7,106 +7,105 @@
       </p>
     </div>
     <form v-else>
-      <li>
-        <label for>Name</label>
-        <input v-model="info.name" type="text" placeholder="Your name" />
-      </li>
-      <li>
-        <label for>Email</label>
-        <input v-model="info.email" type="email" placeholder="Your email" />
-      </li>
-      <li>
-        <label for>Message</label>
-        <textarea
-          name
-          id
-          cols="18"
-          rows="10"
-          v-model="info.message"
-          placeholder="Your message"
-        ></textarea>
-      </li>
-      <li>
-        <antispam
-          v-if="result == 'unverified'"
-          result="unverified"
-          v-on:updateResult="result = arguments[0]"
-        />
-      </li>
-      <li class="actions">
-        <button @click.prevent="clear">Clear</button>
-        <button v-if="result == 'verified'" @click.prevent="validate">
-          Submit
-        </button>
-        <button v-else class="disabled" @click.prevent>Submit</button>
-      </li>
-      <div class="error">{{ formError }}</div>
+      <ul>
+        <li>
+          <label for="name">Name</label>
+          <input v-model="info.name" type="text" placeholder="Your name" id="name" />
+        </li>
+        <li>
+          <label for="email">Email</label>
+          <input v-model="info.email" type="email" placeholder="Your email" id="email" />
+        </li>
+        <li>
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            cols="18"
+            rows="10"
+            v-model="info.message"
+            placeholder="Your message"
+          ></textarea>
+        </li>
+        <li>
+          <antispam
+            v-if="result == 'unverified'"
+            result="unverified"
+            v-on:updateResult="result = arguments[0]"
+          />
+        </li>
+        <li class="actions">
+          <button @click.prevent="clear">Clear</button>
+          <button v-if="result == 'verified'" @click.prevent="validate">
+            Submit
+          </button>
+          <button v-else class="disabled" @click.prevent>Submit</button>
+        </li>
+        <div class="error">{{ formError }}</div>
+      </ul>
     </form>
   </div>
 </template>
 
 <script>
-import antispam from "../components/antispam";
+import antispam from '../components/antispam'
 export default {
   head: {
     title: "Contact Us - PANTELI's of Canterbury",
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: "description",
-        name: "description",
+        hid: 'description',
+        name: 'description',
         content:
-          "Contact form - Please feel free to send us any enquiry that you may have."
-      }
-    ]
+          'Contact form - Please feel free to send us any enquiry that you may have.',
+      },
+    ],
   },
   components: { antispam },
   data() {
     return {
-      info: { name: "", email: "", message: "", submitToLaki: true },
-      result: "unverified",
+      info: { name: '', email: '', message: '', submitToLaki: true },
+      result: 'unverified',
       formSubmitted: false,
-      formError: ""
-    };
+      formError: '',
+    }
   },
   methods: {
     clear() {
-      (this.info.name = ""), (this.info.email = ""), (this.info.message = "");
-      this.formError = "";
+      ;(this.info.name = ''), (this.info.email = ''), (this.info.message = '')
+      this.formError = ''
     },
     checkEmail() {},
     validate() {
-      let _ = this.info;
-      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      let err = false;
-      let email_err = "";
-      if (_.name == "" || _.email == "" || _.message == "") err = true;
-      if (_.email.trim() !== "") {
+      let _ = this.info
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      let err = false
+      let email_err = ''
+      if (_.name == '' || _.email == '' || _.message == '') err = true
+      if (_.email.trim() !== '') {
         if (re.test(String(this.info.email).toLowerCase()) == false) {
-          err = true;
-          email_err = " and email needs a valid format";
+          err = true
+          email_err = ' and email needs a valid format'
         }
       } else {
-        err = true;
+        err = true
       }
-      if (err == true) this.formError = "pls fill in all fields" + email_err;
-      if (err == false) this.submit();
+      if (err == true) this.formError = 'pls fill in all fields' + email_err
+      if (err == false) this.submit()
     },
     submit() {
-      this.$axios.post("mailer20.php", this.info).then(res => {
-        if (res.data == "Success") {
-          this.formSubmitted = true;
+      this.$axios.post('mailer20.php', this.info).then(res => {
+        if (res.data == 'Success') {
+          this.formSubmitted = true
         } else {
-          this.formError =
-            "Sorry your message was not sent. Please try again later.";
+          this.formError = 'Sorry your message was not sent. Please try again later.'
         }
-      });
-    }
-  }
-};
+      })
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/contact";
+@import '../assets/styles/contact';
 </style>
