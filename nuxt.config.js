@@ -48,6 +48,7 @@ export default {
     '~plugins/bus',
     '~plugins/nazTest',
     '~plugins/core-components.js', // tested ok
+    '~plugins/lightGallery.client',
   ],
   /*
    ** Nuxt.js modules
