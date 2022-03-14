@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <h2>Welcome to PANTELI's of Canterbury</h2> -->
-    <img src="panteli_front1a.jpg" alt="" />
+    <img src="panteli_front.webp" alt="" />
     <div v-html="lineBreak(home2)"></div>
     <img class="img" src="panteli__eat-out-to-help-out.jpg" alt="eat out to help out" />
     <br />
