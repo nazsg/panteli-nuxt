@@ -1,30 +1,28 @@
 <template>
-  <div class="pictures">
-    <section>
-      <h1>Photos</h1>
+  <div class="our-pictures">
+    <h1>Photos</h1>
 
-      <no-ssr>
-        <LightGallery
-          :images="images"
-          :index="index"
-          :disable-scroll="true"
-          @close="index = null"
-        />
-      </no-ssr>
+    <no-ssr>
+      <LightGallery
+        :images="images"
+        :index="index"
+        :disable-scroll="true"
+        @close="index = null"
+      />
+    </no-ssr>
 
-      <ul>
-        <li>
-          <a
-            href="#"
-            v-for="(thumb, thumbIndex) in images"
-            :key="thumbIndex"
-            @click="index = thumbIndex"
-          >
-            <img :src="'/rest/rest' + thumb.id + '_sm.jpg'" :alt="thumb.title" />
-          </a>
-        </li>
-      </ul>
-    </section>
+    <ul>
+      <li>
+        <a
+          href="#"
+          v-for="(thumb, thumbIndex) in images"
+          :key="thumbIndex"
+          @click="index = thumbIndex"
+        >
+          <img :src="'/rest/rest' + thumb.id + '_sm.jpg'" :alt="thumb.title" />
+        </a>
+      </li>
+    </ul>
   </div>
 </template>
 

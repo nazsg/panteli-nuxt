@@ -345,4 +345,15 @@ footer {
     }
   }
 }
+.our-pictures {
+  img {
+    border-radius: 15px;
+  }
+  a {
+    img {
+      border-radius: 5px;
+    }
+    padding: 5px;
+  }
+}
 </style>
