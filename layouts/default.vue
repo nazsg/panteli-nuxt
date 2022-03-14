@@ -282,7 +282,7 @@ html {
 
 #upstairs,
 #downstairs,
-#pictures {
+.our-pictures {
   width: 95%;
   margin: 0 auto;
   padding: 0 20px;
@@ -346,8 +346,8 @@ footer {
   }
 }
 .our-pictures {
-  img {
-    border-radius: 15px;
+  li {
+    list-style-type: none;
   }
   a {
     img {

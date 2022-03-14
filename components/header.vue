@@ -1,27 +1,27 @@
 <template>
   <div>
-    <a href="#" class="toggle" @click.prevent="menu"><Menu :size=size /></a>
-    
-    <nav class="menu" :class="{show}">
+    <a href="#" class="toggle" @click.prevent="menu"><Menu :size="size"/></a>
+
+    <nav class="menu" :class="{ show }">
       <ul>
-        <li @click.prevent="close">          
-          <nuxt-link  to="/" >Home</nuxt-link>
+        <li @click.prevent="close">
+          <nuxt-link to="/">Home</nuxt-link>
         </li>
         <li @click.prevent="close">
           <nuxt-link to="/upstairs-menu#top">Upstairs Menu</nuxt-link>
           <!-- <nuxt-link to="/upstairs-menu" :exact="$route.name.includes('upstairs')">Upstairs Menu</nuxt-link> -->
         </li>
         <li @click.prevent="close">
-          <nuxt-link to="/downstairs-menu#top" >Downstairs Menu</nuxt-link>
+          <nuxt-link to="/downstairs-menu#top">Downstairs Menu</nuxt-link>
         </li>
         <li @click.prevent="close">
-          <nuxt-link to="/pictures" >Pictures</nuxt-link>
+          <nuxt-link to="/our-pictures">Pictures</nuxt-link>
         </li>
         <li @click.prevent="close">
-          <nuxt-link to="/find-us" >Find Us</nuxt-link>
+          <nuxt-link to="/find-us">Find Us</nuxt-link>
         </li>
         <li @click.prevent="close">
-          <nuxt-link to="/contact-us" >Contact Us</nuxt-link>
+          <nuxt-link to="/contact-us">Contact Us</nuxt-link>
         </li>
       </ul>
     </nav>
@@ -29,25 +29,25 @@
 </template>
 
 <script>
-import Menu from 'vue-material-design-icons/Menu.vue';
+import Menu from 'vue-material-design-icons/Menu.vue'
 export default {
   components: { Menu },
   data() {
     return {
       show: false,
       hideNav: false,
-      size: 34
+      size: 34,
     }
   },
   methods: {
     menu() {
-      this.show =  !this.show
+      this.show = !this.show
     },
     close() {
       this.show = false
       // this.hideNav = true
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>
@@ -57,5 +57,4 @@ aside nav.menu.show {
 .hideNav {
   display: none;
 }
-
 </style>

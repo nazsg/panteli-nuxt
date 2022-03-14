@@ -1,6 +1,6 @@
 <template>
   <div class="our-pictures">
-    <h1>Photos</h1>
+    <h1>Restaurant images</h1>
 
     <no-ssr>
       <LightGallery
