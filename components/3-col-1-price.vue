@@ -32,7 +32,7 @@ export default {
     },
     title2(title) {
       if (title == 'NO CAT') {
-        return ''
+        return '&nbsp;'
       } else {
         return title
       }
